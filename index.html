@@ -48,6 +48,12 @@
                 <td><input type="button" value="Full Name" @click="fname"></td>
             </tr>
         </table>
+        <hr>
+
+        <!-- Two way data binding er example -->
+        <input type="text" v-model="testData">
+
+        <h1>{{ testData }}</h1>
     </div>
 
     <script>
@@ -56,7 +62,8 @@
             data : {
                 firstName : '',
                 lastName : '',
-                fullName : ''
+                fullName : '',
+                testData : 'Two way data binding',
             },
             methods : {
                 fname : function(){
