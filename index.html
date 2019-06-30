@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <div id="app">
+    <!-- <div id="app">
         {{ message }}
     </div>
     
@@ -27,6 +27,43 @@
                 message : 'Hello Vue!'
             }
         })
+    </script> -->
+
+    <div id="app">
+        <table>
+            <tr>
+                <th>First Name</th>
+                <td><input type="text" v-model="firstName"></td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td><input type="text" v-model="lastName"></td>
+            </tr>
+            <tr>
+                <th>Full Name</th>
+                <td><input type="text" v-model="fullName"></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><input type="button" value="Full Name" @click="fname"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el : '#app',
+            data : {
+                firstName : '',
+                lastName : '',
+                fullName : ''
+            },
+            methods : {
+                fname : function(){
+                    this.fullName = this.firstName + ' ' + this.lastName;
+                }
+            }
+        });
     </script>
 
 
